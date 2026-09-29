@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: mart_premium_by_endorsement
+    description: Close-month premium at endorsement grain.
+    columns:
+      - name: policy_id
+        tests: [not_null]
+      - name: endorsement_seq
+        tests: [not_null]
+      - name: close_month
+        tests: [not_null]
+      - name: premium_amt
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [policy_id, endorsement_seq, close_month]

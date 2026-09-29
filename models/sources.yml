@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: actuarial
+    tables:
+      - name: raw_actuarial_premium
+  - name: cdc
+    tables:
+      - name: raw_policy_endorsement

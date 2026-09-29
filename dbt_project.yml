@@ -1,0 +1,12 @@
+name: premium_close_gate
+version: "1.0.0"
+config-version: 2
+profile: premium_close_gate
+model-paths: ["models"]
+test-paths: ["tests"]
+models:
+  premium_close_gate:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
